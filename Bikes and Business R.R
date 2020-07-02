@@ -23,6 +23,8 @@
 #importing libraries and data
 #############################
 
+install.packages("stargazer")
+install.packages("lattice")
 library(stargazer)
 library(lattice)
 bikeDataNew = read.csv(file.choose()) #choose the downloaded data file
