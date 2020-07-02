@@ -40,7 +40,7 @@ To estimate the change in business applications from newly installed bike lanes 
 A difference in differences model will be used to identify the impact that bike lanes had on the number of new business applications in New York City. Additionally, I will be using neighborhoods as a fixed effect. The complete difference in differences model can be found below.
 
 # Model
-Model 1. Difference in Difference
+Model 1. Difference in Differences
 
 ![Difference in Difference Model](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/model.JPG)
 
