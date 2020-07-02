@@ -7,9 +7,13 @@ Data comes from the city of New York Open Data Project. The New York City Open D
 #Data Collection and Cleaning
 Due to data availability issues, data collection was locked in two ways. First, data collection was limited to the years of 2010 and 2018 as usable census data for control variables were limited to these years. This difference in differences model will then go on to use 2010 as the base year and 2018 as the non-base year. The selection of these two years has the benefit of also allowing neighborhoods to economically adjust to the new installation of bike lanes. Second, control variables were only available at the neighborhood level. This meant that the bike lane and new business data needed to be transformed to fit into a neighborhood based model.
 I collected the primary four variables used in the following difference in differences analysis by using GIS. I first calculated the number of business applications in each New York City neighborhood for the year 2010, and repeated the same process for the year 2018. I next calculated the number of bike lanes in each neighborhood in 2010, and again for 2018. By Using ArcGIS, I had my primary four variables of interest at the neighborhood level, business applications in 2010 for each neighborhood, business applications in 2018 in each neighborhood, feet of bike lanes in 2010 in each neighborhood, and feet of bike lanes in 2018 in each neighborhood. Examples of how GIS was used to find these variables can be found below in figures 1 and 2. This process allowed me to create the panel data necessary for difference in difference modeling.
+
 ![Image of Bike Lanes](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/figure1.JPG)
+
 Figure 1. Map depicting bike lanes by neighborhood in 2018. Redlines represent bike lanes while black lines depict the neighborhood borders. Source: New York City DOT
+
 ![Image of Business Applications](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/Figure%202.JPG)
+
 Figure 2. Map depicting business applications in 2018 by neighborhood. Each point represents a business application in 2018. Lines separate New York City neighborhoods. Source : New York City DOT
 
 
