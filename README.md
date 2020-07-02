@@ -1,0 +1,2 @@
+# Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation
+By using a difference in difference model, this study investigates how the installation of bike lanes affects new business creation in New York City for the years 2010 and 2018. In carrying out this research, the results can help square the discussion of how bike infrastructure affects business health. Additionally, this research can assist cities in better deciding where to target new bike lane creation, as cities continue to solve congestion-related issues.
