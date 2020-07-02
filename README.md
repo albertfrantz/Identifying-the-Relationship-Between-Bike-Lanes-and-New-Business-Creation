@@ -22,8 +22,8 @@ I assumed that the built environment in each location would not face any drastic
 
 Table 1. Data Organization
 
-Year | Neighborhood | TotalBusinessApps | TotalBikeLanes (ft) | TotalPop | FemalePct | MediandAge | BachDgrPct | UnemPct | MeanHIncome ($)
------------- | -------------
+Year | Neighborhood | TotalBusinessApps | TotalBikeLanes | TotalPop | FemalePct | MediandAge | BachDgrPct | UnemPct | MeanHIncome
+---- | ------------ | ----------------- | -------------- | -------- | --------- | ---------- | ---------- | ------- | -----------
 2010 | Gravesend | 27 | 9837.701 | 27105 | 54.1 | 45.4 | 22.1 | 4.4 | 61342
 2018 | Gravesend | 45 | 10354.636 | 30587 | 52.9 | 41.7 | 33.7 | 5.9 | 68025
 
