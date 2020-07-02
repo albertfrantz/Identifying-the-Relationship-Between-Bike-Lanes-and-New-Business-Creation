@@ -42,6 +42,16 @@ Table 2. Variable Descriptive Statistics
 ![Desriptive Statistics](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/descriptiveStats.JPG)
 N is the number of observations. Mean is the mean value of the variable. Min is the minimum value of the observation. Max is the maximum value of the observation.
 
+# Adjusting for Multicollinearity and Robustness
+Due to the wide range of control variables needed, there are potential issues of multicollinearity. Originally, more variables were included, but after testing for multicollinearity using the variance inflation factor, many were removed. Those variables featuring variance inflation factors above 10 were removed as this indicates a problematic amount of collinearity. The variance inflation factor for the remaining control variables that were used can be found in table 3. Finally, robustness was also used to detect and adjust for heteroskedasticity.
+
+     | Y18 | TotalBikeLanes | Y18 * TotalBikeLanes | TotalPop | FemalePct | MediandAge | BachDgrPct | UnemPct | MeanHIncome
+---- | --- | -------------- | -------------------- | -------- | --------- | ---------- | ---------- | ------- | -----------
+VIF | 2.3 | 3.7 | 5.2 | 1.2 | 1.1 | 1.5 | 4.3 | 1.8 | 4.0 |
+
+
+
+
 
 
 
