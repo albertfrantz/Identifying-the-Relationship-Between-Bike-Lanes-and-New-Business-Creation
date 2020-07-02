@@ -2,11 +2,12 @@
 By using a difference in difference model, this study investigates how the installation of bike lanes affects new business creation in New York City for the years 2010 and 2018. In carrying out this research, the results can help square the discussion of how bike infrastructure affects business health. Additionally, this research can assist cities in better deciding where to target new bike lane creation, as cities continue to solve congestion-related issues.
 
 # Data Sources
-Data comes from the city of New York Open Data Project. The New York City Open Data Project is a governmental collaborative project between the Mayor’s office of Data Analytics and the Department of Information Technology and Telecommunications of New York. The Open Data Project provides three key sources of data. The first dataset provides census information on all New York City neighborhoods (New York City Planning, 2019). The second dataset provides data on all New York City legally operating businesses (Department of Consumer Affairs, 2020). The third dataset provides all New York City bike lanes (Department of Transportation, 2020). These datasets are all formatted to be used within GIS and had to be reformatted to be able to perform difference in differences analysis. 
+Data comes from the city of [New York Open Data Project](https://opendata.cityofnewyork.us/projects/). The New York City Open Data Project is a governmental collaborative project between the Mayor’s office of Data Analytics and the Department of Information Technology and Telecommunications of New York. The Open Data Project provides three key sources of data. The first dataset provides census information on all New York City neighborhoods ([New York City Planning, 2019](https://popfactfinder.planning.nyc.gov/#12.25/40.724/-73.9868)). The second dataset provides data on all New York City legally operating businesses ([Department of Consumer Affairs, 2020] (https://data.cityofnewyork.us/Business/License-Applications/ptev-4hud)). The third dataset provides all New York City bike lanes ([Department of Transportation, 2020](https://data.cityofnewyork.us/Transportation/Bicycle-Routes/7vsa-caz7)). These datasets are all formatted to be used within GIS and had to be reformatted to be able to perform difference in differences analysis. 
 
 # Data Collection and Cleaning
 Due to data availability issues, data collection was locked in two ways. First, data collection was limited to the years of 2010 and 2018 as usable census data for control variables were limited to these years. This difference in differences model will then go on to use 2010 as the base year and 2018 as the non-base year. The selection of these two years has the benefit of also allowing neighborhoods to economically adjust to the new installation of bike lanes. Second, control variables were only available at the neighborhood level. This meant that the bike lane and new business data needed to be transformed to fit into a neighborhood based model.
-I collected the primary four variables used in the following difference in differences analysis by using GIS. I first calculated the number of business applications in each New York City neighborhood for the year 2010, and repeated the same process for the year 2018. I next calculated the number of bike lanes in each neighborhood in 2010, and again for 2018. By Using ArcGIS, I had my primary four variables of interest at the neighborhood level, business applications in 2010 for each neighborhood, business applications in 2018 in each neighborhood, feet of bike lanes in 2010 in each neighborhood, and feet of bike lanes in 2018 in each neighborhood. Examples of how GIS was used to find these variables can be found below in figures 1 and 2. This process allowed me to create the panel data necessary for difference in difference modeling.
+
+I collected the primary four variables used in the following difference in differences analysis by using GIS. I first calculated the number of business applications with an approved status in each New York City neighborhood for the year 2010, and repeated the same process for the year 2018. I next calculated the number of bike lanes in each neighborhood in 2010, and again for 2018. By Using ArcGIS, I had my primary four variables of interest at the neighborhood level, business applications in 2010 for each neighborhood, business applications in 2018 in each neighborhood, feet of bike lanes in 2010 in each neighborhood, and feet of bike lanes in 2018 in each neighborhood. Examples of how GIS was used to find these variables can be found below in figures 1 and 2. This process allowed me to create the panel data necessary for difference in difference modeling.
 
 ![Image of Bike Lanes](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/figure1.JPG)
 
@@ -31,11 +32,17 @@ Total bike lanes are measured in feet. Total population is measured in people. F
 
 # Modeling and Variable Description
 To estimate the change in business applications from newly installed bike lanes I will compare the number of business applications and bike lanes in the same neighborhoods while controlling for time variable changes in each neighborhood. 
+
 A difference in differences model will be used to identify the impact that bike lanes had on the number of new business applications in New York City. Additionally, I will be using neighborhoods as a fixed effect. The complete difference in differences model can be found below.
+
+# Model
+Model 1
+
 ![Difference in Difference Model](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/model.JPG)
 
-Model 1. This is a difference in differences model assessing the impact of bike lanes on new business applications. The base year is 2010 and the non-base year is 2018. This model has six control variables.
+This is a difference in differences model assessing the impact of bike lanes on new business applications. The base year is 2010 and the non-base year is 2018. This model has six control variables.
 
+# Model Description
 
 Using this model, I will be able to see how business applications changed in each neighborhood from the installation of new bike lanes alone. The difference in differences model controls for neighborhood factors affecting new business creation that do not change over time. Additionally, the control variables I chose will control for neighborhood factors affecting new business applications that do change over time. This modeling method should result in far less omitted variable bias compared to a simple linear regression. 
 
@@ -57,6 +64,7 @@ Y18 | TotalBikeLanes | Y18 * TotalBikeLanes | TotalPop | FemalePct | MediandAge 
 The reported results of running the difference in differences model with six control variables can be found in table 4. 
 
 Table 4 Regression Results of the difference in difference model.
+
 ![Regression Results](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/results.JPG)
 
 All variables but bike lanes were found to be significant at the 10% level. The most important determinants in new business creation in New York City appear to be population and the percentage of females.
