@@ -22,9 +22,27 @@ I assumed that the built environment in each location would not face any drastic
 
 Table 1. Data Organization
 
-Year | Neighborhood | TotalBusinessApps | TotalBikeLanes | TotalPop | FemalePct | MediandAge | BachDgrPct | UnemPct | MeanHIncome
----- | ------------ | ----------------- | -------------- | -------- | --------- | ---------- | ---------- | ------- | -----------
-2010 | Gravesend | 27 | 9837.701 | 27105 | 54.1 | 45.4 | 22.1 | 4.4 | 61342
-2018 | Gravesend | 45 | 10354.636 | 30587 | 52.9 | 41.7 | 33.7 | 5.9 | 68025
+Year | Y18 | Neighborhood | TotalBusinessApps | TotalBikeLanes | TotalPop | FemalePct | MediandAge | BachDgrPct | UnemPct | MeanHIncome
+---- | --- | ------------ | ----------------- | -------------- | -------- | --------- | ---------- | ---------- | ------- | -----------
+2010 | 0 | Gravesend | 27 | 9837.701 | 27105 | 54.1 | 45.4 | 22.1 | 4.4 | 61342
+2018 | 1 | Gravesend | 45 | 10354.636 | 30587 | 52.9 | 41.7 | 33.7 | 5.9 | 68025
 
 Total bike lanes are measured in feet. Total population is measured in people. FemalePct is a percentage. MedianAge is measured in years. BachDgrPct is a percentage. UnemPct is a percentage. MeanHIncome is measured in dollars.
+
+# Modeling and Variable Description
+To estimate the change in business applications from newly installed bike lanes I will compare the number of business applications and bike lanes in the same neighborhoods while controlling for time variable changes in each neighborhood. 
+A difference in differences model will be used to identify the impact that bike lanes had on the number of new business applications in New York City. Additionally, I will be using neighborhoods as a fixed effect. The complete difference in differences model can be found below.
+![Difference in Difference Model](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/model.JPG)
+
+Using this model, I will be able to see how business applications changed in each neighborhood from the installation of new bike lanes alone. The difference in differences model controls for neighborhood factors affecting new business creation that do not change over time. Additionally, the control variables I chose will control for neighborhood factors affecting new business applications that do change over time. This modeling method should result in far less omitted variable bias compared to a simple linear regression. 
+
+A brief explanation of each variable can be found below. Year is the year of the observation. Neighborhood is the neighborhood the observation is taken from.TotalBikeLanes is the length of bike lanes measured in feet.TotalPop is the neighborhood population for the given year. FemalePct is the percentage of people who identify as female in a neighborhood. BachDgrPct is the percentage of the population that holds a bachelor degree or higher in the neighborhood. UnemPct is the unemployment percentage in the neighborhood. Finally, MeanHIncome is the mean household income. Descriptive Statistics can be found below in table 2.
+
+Table 2. Variable Descriptive Statistics
+![Desriptive Statistics](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/descriptiveStats.JPG)
+N is the number of observations. Mean is the mean value of the variable. Min is the minimum value of the observation. Max is the maximum value of the observation.
+
+
+
+
+
