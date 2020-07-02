@@ -9,17 +9,17 @@ Due to data availability issues, data collection was locked in two ways. First, 
 
 I collected the primary four variables used in the following difference in differences analysis by using GIS. I first calculated the number of business applications with an approved status in each New York City neighborhood for the year 2010, and repeated the same process for the year 2018. I next calculated the number of bike lanes in each neighborhood in 2010, and again for 2018. By Using ArcGIS, I had my primary four variables of interest at the neighborhood level, business applications in 2010 for each neighborhood, business applications in 2018 in each neighborhood, feet of bike lanes in 2010 in each neighborhood, and feet of bike lanes in 2018 in each neighborhood. Examples of how GIS was used to find these variables can be found below in figures 1 and 2. This process allowed me to create the panel data necessary for difference in difference modeling.
 
-Figure 1.
+Figure 1. Neighborhood Bike Lanes
 
 ![Image of Bike Lanes](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/figure1.JPG)
 
-Map depicting bike lanes by neighborhood in 2018. Redlines represent bike lanes while black lines depict the neighborhood borders. Source: New York City DOT
+Map depicting bike lanes by neighborhood in 2018. Redlines represent bike lanes while black lines depict the neighborhood borders. Source: [Department of Transportation, 2020](https://data.cityofnewyork.us/Transportation/Bicycle-Routes/7vsa-caz7)
 
-Figure 2. 
+Figure 2. Neighborhood Business Applications
 
 ![Image of Business Applications](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/Figure%202.JPG)
 
-Map depicting business applications in 2018 by neighborhood. Each point represents a business application in 2018. Lines separate New York City neighborhoods. Source : New York City DOT
+Map depicting business applications in 2018 by neighborhood. Each point represents a business application in 2018. Lines separate New York City neighborhoods. Source : [Department of Consumer Affairs, 2020](https://data.cityofnewyork.us/Business/License-Applications/ptev-4hud)
 
 The difference in differences model allowed me to control for fixed effects in each neighborhood, but I still needed to control for things that changed over time in each neighborhood that would also affect new business creation. To control for these neighborhood changes, I used New York City census data in each neighborhood provided by New York City Planning. I chose six variables to control for. I controlled for neighborhood population, gender distribution, age, education, unemployment, and income all of which may affect new business applications. 
 
@@ -40,7 +40,7 @@ To estimate the change in business applications from newly installed bike lanes 
 A difference in differences model will be used to identify the impact that bike lanes had on the number of new business applications in New York City. Additionally, I will be using neighborhoods as a fixed effect. The complete difference in differences model can be found below.
 
 # Model
-Model 1
+Model 1. Difference in Difference
 
 ![Difference in Difference Model](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/model.JPG)
 
@@ -59,7 +59,7 @@ N is the number of observations. Mean is the mean value of the variable. Min is 
 # Adjusting for Multicollinearity and Robustness
 Due to the wide range of control variables needed, there are potential issues of multicollinearity. Originally, more variables were included, but after testing for multicollinearity using the variance inflation factor, many were removed. Those variables featuring variance inflation factors above 10 were removed as this indicates a problematic amount of collinearity. The variance inflation factor for the remaining control variables that were used can be found in table 3. Finally, robustness was also used to detect and adjust for heteroskedasticity.
 
-Table 3. Variable Variation Inflation Factors.
+Table 3. Variable Variation Inflation Factors
 Y18 | TotalBikeLanes | Y18 * TotalBikeLanes | TotalPop | FemalePct | MediandAge | BachDgrPct | UnemPct | MeanHIncome
 --- | -------------- | -------------------- | -------- | --------- | ---------- | ---------- | ------- | -----------
 2.3 | 3.7 | 5.2 | 1.2 | 1.1 | 1.5 | 4.3 | 1.8 | 4.0 |
@@ -67,7 +67,7 @@ Y18 | TotalBikeLanes | Y18 * TotalBikeLanes | TotalPop | FemalePct | MediandAge 
 # Results
 The reported results of running the difference in differences model with six control variables can be found in table 4. 
 
-Table 4 Regression Results of the difference in difference model.
+Table 4 Regression Results of the difference in difference model
 
 ![Regression Results](https://github.com/albertfrantz/Identifying-the-Relationship-Between-Bike-Lanes-and-New-Business-Creation/blob/master/results.JPG)
 
@@ -106,13 +106,3 @@ This analysis found that bike lanes did not have a significant impact on new bus
 Although bike lanes do not appear to impact new business creation, that does not mean they do not serve a purpose. Bike lanes still have the potential to greatly reduce the impacts that come along with urbanization. Two of those most obvious impacts are pollution and commuter congestion. Because bike lanes do not appear to affect new business creation, their placement should still largely be determined by areas experiencing high levels of commuter suggestion
 
 Bike lanes may not promote new business creation where they are installed, however, they likely have important impacts outside of transportation alone. Additional research needs to be done to see how bike lanes affect the local communities in where they are installed. As more studies on this subject begin to be published, city planners can get a better idea of where to prioritize the installation of bike lanes. By learning more about the ulterior effects of bike lanes, city planners can target areas that may most greatly benefit from their installation. 
-
-
-
-
-
-
-
-
-
-
