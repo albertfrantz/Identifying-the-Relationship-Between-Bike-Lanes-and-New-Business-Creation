@@ -21,6 +21,7 @@ The difference in differences model allowed me to control for fixed effects in e
 I assumed that the built environment in each location would not face any drastic changes in these eight years. For this reason, the built environment is assumed to be relatively constant in each neighborhood between 2010 and 2018. An example of how the data was organized can be found in table 1 below.
 
 Table 1. Data Organization
+
 Year | Neighborhood | TotalBusinessApps | TotalBikeLanes (ft) | TotalPop | FemalePct | MediandAge | BachDgrPct | UnemPct | MeanHIncome ($)
 ------------ | -------------
 2010 | Gravesend | 27 | 9837.701 | 27105 | 54.1 | 45.4 | 22.1 | 4.4 | 61342
